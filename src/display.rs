@@ -147,7 +147,6 @@ impl Color {
 /// This struct represents an LCD screen and provides methods to manipulate it.
 /// Each method returns self to enable chainable calls.
 pub struct Screen {
-    screen_size: (i32, i32),
     font_size: FontSize,
     screen_dir: Option<ScreenDirection>,
 }
@@ -162,7 +161,6 @@ impl Screen {
     ///     A new Screen instance
     pub fn new(screen_dir: Option<ScreenDirection>) -> Self {
         let mut screen = Screen {
-            screen_size: (0, 0),
             font_size: FontSize::Font12x20,
             screen_dir,
         };
@@ -406,7 +404,7 @@ impl Screen {
                 .get(b"UG_PutString")
                 .expect("Failed to load UG_PutString function");
 
-            ug_put_string(x, y, c_string.as_ptr());
+            ug_put_string(x, y, c_string.as_ptr() as *const i8);
         }
 
         self
