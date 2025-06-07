@@ -3,12 +3,18 @@ name: Publish Crate
 on:
   push:
     branches:
-      - main
+      - master
     # Trigger the workflow when Cargo.toml changes (specifically version changes)
     paths:
       - 'Cargo.toml'
       - 'src/**/*'
+  pull_request:
 
+    branches:
+      - master
+    paths:
+      - 'Cargo.toml'
+      - 'src/**/*'
 jobs:
   publish:
     runs-on: ubuntu-latest
