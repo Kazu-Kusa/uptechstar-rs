@@ -5,7 +5,7 @@ edition = "2024"
 
 description = "A Rust library for interacting with hardware components on embedded systems, specifically designed for use with Uptech's hardware."
 repository = "https://github.com/Whth/uptechstar-rs"
-license = "MIT OR Apache-2.0"
+license-file = "LICENSE"
 keywords = ["embedded", "hardware", "sensors"]
 categories = ["embedded"]
 
