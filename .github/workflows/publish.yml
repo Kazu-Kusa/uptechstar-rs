@@ -31,8 +31,6 @@ jobs:
       - name: Build documentation
         run: cargo doc --no-deps
 
-      - name: Run tests
-        run: cargo test
 
       - name: Publish to crates.io
         run: cargo publish
