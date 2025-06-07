@@ -36,7 +36,6 @@
 //! [dependencies]
 //! uptechstar-rs = "0.1.0"
 //! log = "0.4"
-//! env_logger = "0.10"
 //! ```
 //!
 //! Basic usage example:
@@ -47,8 +46,6 @@
 //! use log::info;
 //!
 //! fn main() {
-//!     env_logger::init();
-//!     
 //!     // Initialize ADC-IO system
 //!     if adc_io::adc_open() >= 0 {
 //!         info!("ADC-IO system initialized successfully");
@@ -137,14 +134,14 @@
 //! - **Debug**: Detailed operational information
 //! - **Error**: Hardware failures and communication issues
 //!
-//! Enable logging in your application:
+//! Enable logging in your application by configuring a logging implementation that works
+//! with the `log` crate:
 //!
 //! ```rust
 //! use log::{info, debug, error};
-//! use env_logger;
 //!
 //! fn main() {
-//!     env_logger::init(); // Enable logging output
+//!     // Configure your preferred logging implementation here
 //!     // Your code here
 //! }
 //! ```
